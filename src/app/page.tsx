@@ -40,7 +40,7 @@ function Home() {
 
   return (
     <main className={`flex h-screen w-full flex-col items-center justify-center ${orbitron.className}`}>
-      <h1 className="text-4xl text-green-600">
+      <h1 className="text-4xl text-green-600 text-center w-full">
         {finalTime.days} dias {finalTime.hours} horas {finalTime.minutes} minutos e {finalTime.seconds} segundos
       </h1>
       {totalSeconds <= 0 &&
