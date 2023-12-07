@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 const orbitron = Orbitron({ subsets: ['latin'] })
 
-const finalDate = new Date("12/07/2023");
+const finalDate = new Date("12/08/2023");
 const initialSeconds = Math.round((finalDate.getTime() - new Date().getTime()) / 1000);
 
 function Home() {
