@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Festinha',
   description: 'Festinha de final de ano da ivare',
+  icons: ['yoshi.gif']
 }
 
 export default function RootLayout({
