@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 
 const orbitron = Orbitron({ subsets: ['latin'] })
 
-
 const finalDate = new Date("12/08/2023");
-const initialSeconds = Math.round(Math.abs(finalDate.getTime() - new Date().getTime()) / 1000);
+const initialSeconds = Math.round((finalDate.getTime() - new Date().getTime()) / 1000);
 
 function Home() {
   const [totalSeconds, setTotalSeconds] = useState<number>(initialSeconds);
@@ -40,16 +39,17 @@ function Home() {
 
   return (
     <main className={`flex h-screen w-full flex-col items-center justify-center ${orbitron.className}`}>
-      <h1 className="text-4xl text-green-600 text-center w-full">
-        {finalTime.days} dias {finalTime.hours} horas {finalTime.minutes} minutos e {finalTime.seconds} segundos
-      </h1>
-      {totalSeconds <= 0 &&
-        <iframe
+      {totalSeconds > 0 ?
+        <h1 className="text-4xl text-green-600 text-center w-full">
+          {finalTime.days} dias {finalTime.hours} horas {finalTime.minutes} minutos e {finalTime.seconds} segundos
+        </h1>
+        :
+        <video
+          src="video.mp4"
+          autoPlay
+          controls
           width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=kQpXR458EO507eGx?autoplay=1"
-          title="Never Gonna Give You Up"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          loop
         />
       }
     </main>
